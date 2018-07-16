@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+
+	<description>
+	Lustre Common
+	</description>
+
+	<copyright>
+	
+#
+#    Copyright (C) 2011-2013  Werner Saar (wernsaar@googlemail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see http://www.gnu.org/licenses/.
+#
+#    
+#       "This product includes software developed by the Rocks(r)
+#       Cluster Group at the San Diego Supercomputer Center at the
+#       University of California, San Diego and its contributors."
+#
+#
+
+	</copyright>
+
+	<changelog>
+
+	</changelog>
+
+<package>kmod-lustre-client</package>
+<package>kmod-lustre-client-tests</package>
+<package>lustre-client</package>
+<package>lustre-client-tests</package>
+<package>lustre-iokit</package>
+<package>libyaml</package>
+
+<post>
+
+<![CDATA[#!/bin/bash
+if [ -f /etc/updatedb.conf ]
+then
+	if grep "^PRUNEFS.*lustre" /etc/updatedb.conf >/dev/null
+	then
+		true
+	else
+		sed -i -e '/^PRUNEFS/s/"$/ lustre"/' /etc/updatedb.conf
+	fi
+fi
+
+]]>
+
+</post>
+
+</kickstart>
+

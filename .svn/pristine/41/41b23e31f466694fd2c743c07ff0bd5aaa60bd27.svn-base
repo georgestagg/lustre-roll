@@ -1,0 +1,110 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[margin=1.5cm,nohead]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\author{Werner Saar}
+\title{Lustre Client Roll for Rocks Cluster}
+\begin{document}
+\maketitle
+
+
+\chapter{Introduction}
+\begin{quote}
+The Lustre Client Roll provides access to the Lustre filesystem.
+\end{quote}
+
+\section*{Summary}
+\begin{quote}
+\begin{tabular}{|l|l|}
+\hline
+Name & lustre-client \\
+\hline
+Version & 6.2 \\
+\hline
+Maintained by & Werner Saar \\
+\hline
+Architecture & x86\_64\\
+\hline
+Compatible with Rocks® & 6.2 \\
+\hline
+\end{tabular}
+\end{quote}
+
+\section*{Roll Compatibility}
+\begin{quote}
+The Lustre Client Roll has been tested with the following rolls. 
+\begin{quote}
+\begin{verbatim}
+NAME                    VERSION  ARCH   ENABLED REQUIRED
+base:                   6.2      x86_64 yes     yes
+ganglia:                6.2      x86_64 yes     yes
+hpc:                    6.2      x86_64 yes     yes
+kernel:                 6.2      x86_64 yes     yes
+os:                     6.2      x86_64 yes     yes
+web-server:             6.2      x86_64 yes     yes
+java:                   6.2      x86_64 yes     no
+perl:                   6.2      x86_64 yes     no
+python:                 6.2      x86_64 yes     no
+
+\end{verbatim}
+\end{quote}
+\end{quote}
+
+\section*{Support}
+\begin{quote}
+The Lustre Client Roll is provided AS-IS without support. Please send email to wernsaar@googlemail.com for free support.
+\end{quote}
+
+\section*{License}
+\begin{quote}
+\begin{verbatim}
+#                        Lustre Client Roll
+#
+#    Copyright (C) 2011-2015  Werner Saar (wernsaar@googlemail.com)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see http://www.gnu.org/licenses/.
+#
+#    
+#       "This product includes software developed by the Rocks(r)
+#       Cluster Group at the San Diego Supercomputer Center at the
+#       University of California, San Diego and its contributors."
+#
+#
+
+\end{verbatim}
+All other licenses und copyrights are property of their owners.
+\end{quote}
+
+\section*{Installation}
+\begin{quote}
+The Lustre Client Roll is provided as iso image.
+The normal way to install is:
+
+\begin{quote}
+\begin{verbatim}
+rocks add roll lustre-client*.iso
+rocks enable roll lustre-client
+cd /export/rocks/install
+rocks create distro
+yum clean all
+rocks run roll lustre-client|sh
+reboot
+\end{verbatim}
+\end{quote}
+
+Now You can reinstall your compute nodes.
+\end{quote}
+\end{document}

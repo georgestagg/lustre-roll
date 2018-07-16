@@ -1,0 +1,6 @@
+ROLLNAME	= lustre-client
+VERSION		= 6.2.0_2.5.3
+RELEASE		= 1
+COLOR		= blue
+
+REDHAT.ROOT	= $(CURDIR)
