@@ -1,5 +1,5 @@
 ROLLNAME	= lustre-client
-VERSION		= 7.0.0_2.10.3
+VERSION		= 7.0.0_2.12.4
 RELEASE		= 1
 COLOR		= blue
 
